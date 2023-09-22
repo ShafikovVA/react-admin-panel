@@ -1,0 +1,169 @@
+$main_color: #3A57E8;
+$extra_color: #0048B2;
+$white_color: #FFFFFF;
+$default_font-size: 16px;
+$default_bg_color: #E9ECEF;
+$text_color: #8A92A6;
+
+@font-face {
+    font-family: Inter;
+    src: url(assets/fonts/Inter/static/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(assets/fonts/Inter/static/Inter-Medium.ttf);
+    font-weight: 500
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(assets/fonts/Inter/static/Inter-Bold.ttf);
+    font-weight: 700
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(src/assets/fonts/Inter/static/Inter-SemiBold.ttf);
+    font-weight: 600
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $default_bg_color;
+    font-family: Inter;
+    font-size: $default_font-size;
+}
+header{
+    background-color: $white_color;
+    height: 76px;
+    padding: 0 32px;
+    background: #FFF;
+    backdrop-filter: blur(32px);
+    border: 1px solid  $default_bg_color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .logo{
+        font-size: 33px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+    }
+    .user{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .info{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .role{
+            font-size: 13px;
+            color: $text_color;
+        }
+    }
+    .UserPhoto{
+        width: 45px;
+        height: 45px;
+    }
+}
+.UserPhoto{
+    background-color: #DFE5F3;
+    border-radius: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    color: $text_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-container{
+    width: 100%;
+    display: flex;
+}
+.content-container{
+    width: 100%;
+}
+main{
+    width: 100%;
+    min-height: 100vh;
+    padding: auto auto 62px auto ;
+}
+.container{
+    height: 100%;
+    margin: auto;
+}
+
+.leftSideBar{
+    background-color: $white_color;
+    padding: 18px 12px 12px 12px;
+    width: 257px;
+
+    .section{
+        border-bottom: thin solid #E9ECEF;
+        .title{
+            color: #ADB5BD;
+            font-weight: 600;
+            line-height: 175%;
+            margin-bottom: 26px;
+            padding-left: 24px;
+        }
+    }
+    .link, .dropdown-link .title{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 8px 24px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 175%;
+        border-radius: 4px;
+        transition: 0.1s ease;
+        color: $text_color;
+        cursor: pointer;
+        &:hover{
+            background-color: $main_color;
+            color: $white_color;
+            svg{
+                fill: #FFF
+            }
+        }
+        svg{
+            fill: $text_color;
+        }
+    }
+    .dropdown-link{
+        cursor: pointer;
+        .title{
+            margin-bottom: 0px;
+            padding-right: 50px;
+            position: relative;
+        }
+        .indicator{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 26px;
+            transition: 0.15s ease;
+        }
+        .indicator.rotated{
+            transform: rotate(90deg);
+        }
+        
+    }
+    .MuiCollapse-wrapperInner{
+        padding-left: 40px;
+    }
+}
+a{
+    text-decoration: none;
+}
+
+
