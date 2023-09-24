@@ -1,0 +1,57 @@
+.grid{
+    table{
+        border-collapse: collapse;
+        width: 100%;
+        line-height: 175%;
+        thead{
+            border-bottom: thin solid #c4c4c4;
+            tr:last-child{
+                td{
+                    padding-bottom:16px;
+                }
+            }   
+        }
+        tbody{
+            tr{
+                &:first-child{
+                    td{
+                        padding-top:16px;
+                    }
+                }
+                &:last-child{
+                    td{
+                        padding-bottom:16px;
+                    }
+                }
+            } 
+        }
+        tfoot{
+            border-top: thin solid #c4c4c4;
+            td{
+                padding-top:16px;
+            }
+        }
+        tr{
+            td{
+                width: fit-content;
+                max-width: 350px;
+                text-align: center;
+                text-wrap: wrap;
+                &:first-child{
+                    text-align: start;
+                } 
+                &:last-child{
+                    text-align: end;
+                }
+            }
+        }
+        .configureColumn{
+            color: #a9a9a9;
+        }
+    }
+}
+#actions-popover .button-group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

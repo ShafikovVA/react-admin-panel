@@ -165,5 +165,10 @@ main{
 a{
     text-decoration: none;
 }
-
+div[role="tooltip"]{
+    .MuiBox-root{
+        border-radius: 4px;
+        border-color: #EEE;
+    }
+}
 

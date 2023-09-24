@@ -7,9 +7,13 @@ export interface LayoutProps{
 function PanelTitle(props: LayoutProps){
     return(
         <div className="panelTitle">
-            <div className="title">{props.title}</div>
-            <div className="title">{props.subtitle}</div>
-            {props.children}
+            <div className="panelTitle-container">
+                <div className="title">{props.title}</div>
+                <div className="children">{props.children}</div>    
+            </div>
+            
+            <div className="subtitle">{props.subtitle}</div>
+      
         </div>
     )
 }

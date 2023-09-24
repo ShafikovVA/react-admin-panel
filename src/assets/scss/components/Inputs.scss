@@ -1,0 +1,11 @@
+.form-input{
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #EEE;
+
+    input[type="checkbox"] + label {
+        cursor: pointer;
+    }
+}

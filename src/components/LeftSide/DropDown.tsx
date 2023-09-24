@@ -4,14 +4,14 @@ import IndicatorIcon from "../../assets/images/icons/Indicator.svg?react";
 
 export interface LayoutProps  {
     title: string;
-    icon: string | JSX.Element | JSX.Element[],
+    icon?: string | JSX.Element | JSX.Element[],
     children: JSX.Element[],
 }
 
 function DropDown(props: LayoutProps){
     let [expanded, setExpanded] = useState(false);    
     return(
-        <div className="dropdown-link" onClick={()=>  setExpanded(!expanded)}>
+        <div className="dropdown-link" onClick={()=> setExpanded(!expanded)}>
             <div className="title">
                 {props.icon}
                 {props.title}
