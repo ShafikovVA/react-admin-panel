@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 export interface LayoutProps  { 
     url: string,
@@ -7,9 +8,9 @@ export interface LayoutProps  {
 
 function LinkButton(props: LayoutProps){
     return(
-        <a className="link" href={props.url}>
+        <Link className="link" to={ props.url ?  props.url : ''}>
             {props.children}
-        </a>
+        </Link>
     )
 }
 

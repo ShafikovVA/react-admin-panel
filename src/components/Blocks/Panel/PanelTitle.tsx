@@ -1,7 +1,7 @@
 export interface LayoutProps{
-    title: string | JSX.Element | JSX.Element[],
-    subtitle: string | JSX.Element | JSX.Element[],
-    children: string | JSX.Element | JSX.Element[],
+    title?: string | JSX.Element | JSX.Element[],
+    subtitle?: string | JSX.Element | JSX.Element[],
+    children?: string | JSX.Element | JSX.Element[],
 }
 
 function PanelTitle(props: LayoutProps){

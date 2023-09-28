@@ -12,9 +12,7 @@ import GameIcon from "./../../../assets/images/icons/Game.svg";
 import SettingIcon from "./../../../assets/images/icons/Setting.svg";
 
 function HeaderLeftSide(){
-
-
-
+    
     return (
         <div className="leftSideBar">
             <Section title="Управление главной страницей">
@@ -22,7 +20,7 @@ function HeaderLeftSide(){
                     <UserIcon></UserIcon> 
                     Главная страница
                 </LinkButton>
-                <LinkButton url="/">
+                <LinkButton url="/EditDataPage">
                     <CategoryIcon></CategoryIcon>
                     Не главная страница
                 </LinkButton>

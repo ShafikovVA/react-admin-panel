@@ -1,6 +1,6 @@
 
 export interface LayoutProps{
-    children: null | undefined | string | JSX.Element | JSX.Element[],
+    children?: null | undefined | string | JSX.Element | JSX.Element[],
 }
 
 function Panel(props: LayoutProps){
