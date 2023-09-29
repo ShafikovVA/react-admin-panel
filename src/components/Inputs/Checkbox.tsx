@@ -1,7 +1,8 @@
 import {useRef, useEffect} from "react";
+import IInput from "./IInput";
+import InputLayout from "./InputLayout";
 
-export interface LayoutProps{
-    text?: string;
+export interface LayoutProps extends IInput{
     checked?: boolean;
 }
 
@@ -21,12 +22,11 @@ function Checkbox(props: LayoutProps){
         }
     })
     
-    console.log(inputRef);
     return(
-        <div className="form-input">
+        <InputLayout description={props.description} inline={props.inline}>
             <input ref={inputRef} type="checkbox"  />
             <label onClick={handleOpenFileInput}>{props.text}</label>
-        </div>
+        </InputLayout>
     );
 }
 

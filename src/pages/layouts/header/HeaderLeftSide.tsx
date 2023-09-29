@@ -11,18 +11,25 @@ import FilterIcon from "./../../../assets/images/icons/Filter.svg";
 import GameIcon from "./../../../assets/images/icons/Game.svg";
 import SettingIcon from "./../../../assets/images/icons/Setting.svg";
 
+import { useLocation } from 'react-router-dom';
+
+
 function HeaderLeftSide(){
-    
+    console.log(useLocation());
     return (
         <div className="leftSideBar">
             <Section title="Управление главной страницей">
-                <LinkButton url="/">
+                <LinkButton className={ useLocation().pathname === '/'  ? 'active' : ''} url="/">
                     <UserIcon></UserIcon> 
                     Главная страница
                 </LinkButton>
-                <LinkButton url="/EditDataPage">
+                <LinkButton className={ useLocation().pathname.startsWith('/EditDataPage')  ? 'active' : ''} url="/EditDataPage">
                     <CategoryIcon></CategoryIcon>
                     Не главная страница
+                </LinkButton>
+                <LinkButton className={ useLocation().pathname.startsWith('/users')  ? 'active' : ''} url="/users">
+                    <UserIcon></UserIcon> 
+                    Пользователи
                 </LinkButton>
                 <DropDown title="Дропдаун"
                         icon={<DocumentIcon></DocumentIcon>}>

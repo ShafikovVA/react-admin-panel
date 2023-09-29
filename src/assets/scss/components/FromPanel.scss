@@ -1,0 +1,36 @@
+.form-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px 0;
+
+    .panel-block{
+        display: flex;
+        & > *{
+            width: 100%;
+        }
+        .title-block{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .title{
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .description{
+                font-size: 14px;
+                color: #8A92A6;
+            }
+        }
+        
+        .content{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #FFFFFF;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 10px 13px 0px rgba(17, 38, 146, 0.05);
+        }
+    }
+}

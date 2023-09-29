@@ -1,4 +1,4 @@
-button{
+button, .btn{
     background: transparent;
     font-family: Inter;
     text-align: center;
@@ -27,7 +27,7 @@ button{
     }
     
 }
-button.primary{
+button.primary, .btn.primary{
     background: #3A57E8;
     border-color: transparent;
     border-radius: 4px;
@@ -38,7 +38,7 @@ button.primary{
         box-shadow: 0px 2px 4px 0px rgba(58, 87, 232, 0.20);
     }
 }
-button.transparent{
+button.transparent, .btn.transparent{
     background: transparent;
     border-color: #eee;
     border-radius: 4px;
@@ -48,7 +48,7 @@ button.transparent{
         box-shadow: 0px 2px 4px 0px rgba(58, 87, 232, 0.20);
     }
 }
-button.danger{
+button.danger, .btn.danger{
     background: #C03221;
     border-color: transparent;
     border-radius: 4px;

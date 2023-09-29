@@ -1,11 +1,35 @@
 .form-input{
     display: flex;
+    flex-direction: column;
     padding: 8px 16px;
-    align-items: center;
     gap: 8px;
-    border: 1px solid #EEE;
-
+    label{
+        color: #8A92A6;
+        line-height: normal;
+    }
+    .description{
+        color: #6C757D;
+        font-size: 13px;
+        font-weight: 400;
+        margin-top: -4px;
+    }
+    &.inline{
+        flex-direction: row;
+        align-items: center;
+    }
     input[type="checkbox"] + label {
         cursor: pointer;
     }
+    input{
+        border-radius: 4px;
+        border: 1px solid #EEE;
+        background: #FFF;
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+    .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+        padding: 8px 16px;
+    }
+    
+
 }

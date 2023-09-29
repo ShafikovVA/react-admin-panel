@@ -84,10 +84,10 @@ function Grid(props: LayoutProps){
                             {({ TransitionProps }) => (
                                 <Fade {...TransitionProps}>
                                 <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
-                                    <Checkbox checked text="Первая колонка"></Checkbox>
-                                    <Checkbox checked text="Вторая колонка"></Checkbox>
-                                    <Checkbox checked text="Третья колонка"></Checkbox>
-                                    <Checkbox checked text="Четвертая колонка"></Checkbox>
+                                    <Checkbox inline checked text="Первая колонка"></Checkbox>
+                                    <Checkbox inline checked text="Вторая колонка"></Checkbox>
+                                    <Checkbox inline checked text="Третья колонка"></Checkbox>
+                                    <Checkbox inline checked text="Четвертая колонка"></Checkbox>
                                 </Box>
                                 </Fade>
                             )}

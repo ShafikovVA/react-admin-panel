@@ -93,6 +93,9 @@ main{
     width: 100%;
     min-height: 100vh;
     padding: auto auto 62px auto ;
+    & > .container{
+        margin-top: 30px;
+    }
 }
 .container{
     height: 100%;
@@ -127,15 +130,23 @@ main{
         transition: 0.1s ease;
         color: $text_color;
         cursor: pointer;
-        &:hover{
+        &:hover, &.active{
             background-color: $main_color;
             color: $white_color;
             svg{
                 fill: #FFF
             }
         }
+        &.active{
+            &:hover{
+                opacity: 1;
+            }
+        }
         svg{
             fill: $text_color;
+        }
+        &:hover{
+           opacity: 0.6;
         }
     }
     .dropdown-link{
