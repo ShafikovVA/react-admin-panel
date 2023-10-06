@@ -1,14 +1,28 @@
+import {useEffect} from 'react';
+import {Link} from "react-router-dom";
+import type { RootState } from '../../store';
+import { useSelector, useDispatch } from 'react-redux'
+
 import TitleBlock from "../../components/Blocks/TitleBlock";
 import Panel from "../../components/Blocks/Panel/Panel";
 import PanelTitle from "../../components/Blocks/Panel/PanelTitle";
 import Grid from "../../components/Blocks/Grid";
 import VoiceIcon from "../../assets/images/icons/Voice.svg?react";
 import PlusCircleIcon from '../../assets/images/icons/Plus Circle.svg?react';
-
-import {Link} from "react-router-dom";
+import  { getAll }  from '../../store/Users';
+import { AppDispatch } from '../../store';
 
 
 function UsersPage(){
+    const users = useSelector((state: RootState)=> state.users);
+    const dispatch = useDispatch<AppDispatch>();
+    useEffect(() => {
+        const promise = dispatch(getAll())
+    }, []);
+    useEffect(() => {
+        console.log(users);
+    })
+    
     return(
         <>
             <TitleBlock 
@@ -26,7 +40,8 @@ function UsersPage(){
                         subtitle="Упоавление данными пользователей">
                         <Link to="/users/create" className="btn transparent"><PlusCircleIcon/> Создать пользователя</Link>
                     </PanelTitle>
-                    <Grid tools columnConfigure></Grid>
+                    <Grid tools columnConfigure model={users.users}></Grid>
+                  
                 </Panel>
             </div>
         </>
