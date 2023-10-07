@@ -1,5 +1,5 @@
 import { useState, MouseEvent } from "react";
-import { Popper, Fade, Box, Skeleton } from "@mui/material";
+import { Popper, Fade, Box } from "@mui/material";
 import Checkbox from "../Inputs/Checkbox";
 import DeleteIcon from "../../assets/images/icons/TrashIcon";
 import EditIcon from "../../assets/images/icons/PencilSquareIcon";

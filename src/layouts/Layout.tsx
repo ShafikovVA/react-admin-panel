@@ -1,7 +1,6 @@
-import React from 'react';
-import {RouterProvider, BrowserRouter, Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import SideBar from './Sidebar.tsx';
-import Header from './Header.tsx';
+import Header from './Seader.tsx';
 
 
 function Layout(){

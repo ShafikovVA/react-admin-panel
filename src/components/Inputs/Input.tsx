@@ -1,4 +1,4 @@
-import {useRef, useEffect} from "react";
+import {useRef} from "react";
 import IInput from "./IInput";
 import InputLayout from "./InputLayout";
 

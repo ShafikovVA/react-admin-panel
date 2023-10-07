@@ -6,7 +6,7 @@ import Input from "../../components/Inputs/Input";
 import Checkbox from "../../components/Inputs/Checkbox";
 import Switch from "../../components/Inputs/Switch";
 import Select from "../../components/Inputs/Select";
-import {MenuItem, Breadcrumbs, Link, Typography} from '@mui/material';
+import { MenuItem, Breadcrumbs, Link, Typography } from '@mui/material';
 
 
 function CreateUserPage(){
