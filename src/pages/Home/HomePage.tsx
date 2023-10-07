@@ -1,8 +1,10 @@
+import { Button, Box } from "@mui/material";
+
 import TitleBlock from "../../components/Blocks/TitleBlock";
 import Panel from "../../components/Blocks/Panel/Panel";
 import PanelTitle from "../../components/Blocks/Panel/PanelTitle";
 import Grid from "../../components/Blocks/Grid";
-import VoiceIcon from "../../assets/images/icons/Voice.svg?react";
+import VoiceIcon from "../../assets/images/icons/VoiceIcon";
 
 function HomePage(){
     return(
@@ -10,12 +12,12 @@ function HomePage(){
             <TitleBlock 
                 title="Привет, это главная страница!"
                 description="Приветствую вас на главной странице, тут основная информация о данном сайте">
-                    <button>
-                        <VoiceIcon></VoiceIcon>
+                    <Button>
+                        <VoiceIcon />
                         Тут кнопка
-                    </button>
+                    </Button>
             </TitleBlock>
-            <div className="container">
+            <Box className="container">
                 <Panel>
                     <PanelTitle
                         title="Это панелька!"
@@ -24,7 +26,7 @@ function HomePage(){
                     </PanelTitle>
                     <Grid tools columnConfigure></Grid>
                 </Panel>
-            </div>
+            </Box>
         </>
     );   
 }

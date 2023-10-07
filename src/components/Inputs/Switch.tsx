@@ -3,13 +3,17 @@ import IInput from "./IInput";
 import {Switch as SwitchMui} from "@mui/material";
 import {SwitchProps} from "@mui/material";
 
-export interface LayoutProps extends IInput, SwitchProps{};
-
-function Switch(props: LayoutProps){
+function Switch(props: IInput & SwitchProps){
+    const {
+        description, 
+        inline, 
+        text
+    } = props;
+    
     return(
-        <InputLayout description={props.description} inline={props.inline} >
+        <InputLayout description={description} inline={inline} >
             <SwitchMui {...props} />
-            <label htmlFor="">{props.text}</label>
+            <label htmlFor="">{text}</label>
         </InputLayout>
     )
 }

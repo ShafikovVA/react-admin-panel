@@ -1,20 +1,29 @@
+import { ReactNode } from 'react';
+import { Box } from '@mui/material';
+
 interface LayoutProps {
     title: string;
     description: undefined | null | string;
-    children:  undefined | null | string | JSX.Element | JSX.Element[],
+    children:  undefined | null | ReactNode,
 }
 
 function TitleBlock(props: LayoutProps){
+    const { 
+        title, 
+        description, 
+        children 
+    } = props;
+
     return(
-        <div className="titleBlock">
-            <div className="container">
-                <div className="title-contaniner">
-                    <div className="title">{props.title}</div>
-                    <div className="children">{props.children}</div>
-                </div>
-                <div className="description">{props.description}</div>
-            </div>
-        </div>
+        <Box className="titleBlock">
+            <Box className="container">
+                <Box className="title-contaniner">
+                    <Box className="title">{title}</Box>
+                    <Box className="children">{children}</Box>
+                </Box>
+                <Box className="description">{description}</Box>
+            </Box>
+        </Box>
     )
 }
 

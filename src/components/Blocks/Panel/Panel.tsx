@@ -1,13 +1,17 @@
+import { ReactNode } from 'react';
+import { Box } from '@mui/material';
 
 export interface LayoutProps{
-    children?: null | undefined | string | JSX.Element | JSX.Element[],
+    children?: null | undefined | ReactNode,
 }
 
 function Panel(props: LayoutProps){
+    const { children } = props;
+
     return(
-        <div className="panel"> 
-            {props.children}
-        </div>
+        <Box className="panel"> 
+            {children}
+        </Box>
     )
 }
 

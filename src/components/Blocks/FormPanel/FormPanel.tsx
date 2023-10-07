@@ -1,12 +1,17 @@
+import { ReactNode } from 'react';
+import { Box } from '@mui/material';
+
 export interface LayoutProps{
-    children?: null | undefined | string | JSX.Element | JSX.Element[],
+    children?: ReactNode,
 }
 
 function FormPanel(props: LayoutProps){
+    const { children } = props;
+
     return(
-        <div className="form-panel"> 
-            {props.children}
-        </div>
+        <Box className="form-panel"> 
+            {children}
+        </Box>
     )
 }
 

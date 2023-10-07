@@ -7,23 +7,23 @@ export interface LayoutProps extends IInput{
 }
 
 function Checkbox(props: LayoutProps){
+    const { checked } = props;
     
     const inputRef = useRef<HTMLInputElement>(null);
     
     const handleOpenFileInput = () => {
         if(!inputRef.current) return;
-        console.log(inputRef.current);
         inputRef.current.click();
     }
 
     useEffect(()=> {
-        if(props.checked && inputRef.current){
+        if(checked && inputRef.current){
             inputRef.current.checked = true;    
         }
-    })
+    },[]);
     
     return(
-        <InputLayout description={props.description} inline={props.inline}>
+        <InputLayout {...props}>
             <input ref={inputRef} type="checkbox"  />
             <label onClick={handleOpenFileInput}>{props.text}</label>
         </InputLayout>

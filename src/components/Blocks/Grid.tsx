@@ -1,8 +1,8 @@
 import { useState, MouseEvent } from "react";
 import { Popper, Fade, Box, Skeleton } from "@mui/material";
 import Checkbox from "../Inputs/Checkbox";
-import DeleteIcon from "../../assets/images/icons/Trash.svg?react";
-import EditIcon from "../../assets/images/icons/Pencil Square.svg?react";
+import DeleteIcon from "../../assets/images/icons/TrashIcon";
+import EditIcon from "../../assets/images/icons/PencilSquareIcon";
 import GridSkeleton from "./Skeletons/GridSkeleton";
 
 export interface LayoutProps{
@@ -12,16 +12,22 @@ export interface LayoutProps{
 }
 
 function Grid(props: LayoutProps){
-    const skeletonCondition = !props.model || !( Array.isArray(props.model) && props.model.length === 0);
+    const { 
+        model, 
+        tools, 
+        columnConfigure 
+    } = props;
+
+    const skeletonCondition = !model || !( Array.isArray(model) && model.length === 0);
 
     const [columnSettingsAnchor, setColumnSettingsAnchor] = useState<null|(EventTarget & Element)>(null);
-    const [anchorEl1, setAnchorEl1] = useState<null|(EventTarget & Element)>(null);
+    const [rowActionsAnchor, setRowActionsAnchor] = useState<null|(EventTarget & Element)>(null);
     const [actionButton, setActionButton] = useState<null|EventTarget & Element>(null);
 
-    const open = Boolean(columnSettingsAnchor);
-    const open1 = Boolean(anchorEl1);
-    const id = open ? "transitions-popper" : undefined;
-    const actionsPopover = open1 ? "actions-popover" : undefined;
+    const openColumnSettings = Boolean(columnSettingsAnchor);
+    const openRowAction = Boolean(rowActionsAnchor);
+    const id = openColumnSettings ? "transitions-popper" : undefined;
+    const actionsPopover = openRowAction ? "actions-popover" : undefined;
 
     // let actionButton:null|EventTarget & Element = null;
 
@@ -29,25 +35,24 @@ function Grid(props: LayoutProps){
         setColumnSettingsAnchor(columnSettingsAnchor ? null : event.currentTarget);
     };
     const handleClick1 = (event: MouseEvent): void => {
-        console.log(anchorEl1);
+        console.log(rowActionsAnchor);
         if(event.currentTarget === actionButton){
-            setAnchorEl1(anchorEl1 ? null : event.currentTarget);
+            setRowActionsAnchor(rowActionsAnchor ? null : event.currentTarget);
         }
         else{
             // setAnchorEl1(null);
-            setAnchorEl1(event.currentTarget);
+            setRowActionsAnchor(event.currentTarget);
         }
         setActionButton(event.currentTarget);
     };
 
     return(
-        <div className="grid">
-           
+        <Box className="grid">
             <table>
                 {
                     !skeletonCondition &&  
                         <GridSkeleton/>
-                }
+                }       
                 {
                     skeletonCondition &&
                     <>  
@@ -57,7 +62,7 @@ function Grid(props: LayoutProps){
                             <td>I'm your second cell.</td>
                             <td>I'm your third cell.</td>
                             <td>I'm your fourth cell.</td>
-                            {props.tools &&
+                            {tools &&
                                 <td>Действия</td>
                             }
                         </tr>
@@ -68,7 +73,7 @@ function Grid(props: LayoutProps){
                             <td>I'm your second cell.</td>
                             <td>I'm your third cell.</td>
                             <td>I'm your fourth cell.</td>
-                            {props.tools &&
+                            {tools &&
                                 <td>
                                     <button aria-describedby={actionsPopover} onClick={handleClick1}>...</button>
                                 </td>
@@ -79,7 +84,7 @@ function Grid(props: LayoutProps){
                             <td>I'm your second cell.</td>
                             <td>I'm your third cell.</td>
                             <td>I'm your fourth cell.</td>
-                            {props.tools &&
+                            {tools &&
                                 <td>
                                     <button aria-describedby={actionsPopover} onClick={handleClick1}>...</button>
                                 </td>
@@ -88,10 +93,10 @@ function Grid(props: LayoutProps){
                     </tbody>
                     <tfoot>
                         <tr>
-                        {props.columnConfigure &&
+                        {columnConfigure &&
                             <>
                             <td ><button aria-describedby={id} onClick={handleClick}  className="configureColumn">настроить колонки</button></td>
-                            <Popper id={id} open={open} anchorEl={columnSettingsAnchor} transition>
+                            <Popper id={id} open={openColumnSettings} anchorEl={columnSettingsAnchor} transition>
                                 {({ TransitionProps }) => (
                                     <Fade {...TransitionProps}>
                                     <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
@@ -109,23 +114,20 @@ function Grid(props: LayoutProps){
                     </tfoot>
                     </>
                 }
-                
-                
-
             </table>
-            <Popper id={actionsPopover} open={open1} anchorEl={anchorEl1} transition>
+            <Popper id={actionsPopover} open={openRowAction} anchorEl={rowActionsAnchor} transition>
                 {({ TransitionProps }) => (
                     <Fade {...TransitionProps}>
                     <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
-                        <div className="button-group">
+                        <Box className="button-group">
                             <button className="transparent"><EditIcon></EditIcon> Изменить</button>
                             <button className="danger"><DeleteIcon></DeleteIcon> Удалить</button>
-                        </div>
+                        </Box>
                     </Box>
                     </Fade>
                 )}
             </Popper> 
-        </div>
+        </Box>
     )
 }
 

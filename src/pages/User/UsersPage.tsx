@@ -7,8 +7,8 @@ import TitleBlock from "../../components/Blocks/TitleBlock";
 import Panel from "../../components/Blocks/Panel/Panel";
 import PanelTitle from "../../components/Blocks/Panel/PanelTitle";
 import Grid from "../../components/Blocks/Grid";
-import VoiceIcon from "../../assets/images/icons/Voice.svg?react";
-import PlusCircleIcon from '../../assets/images/icons/Plus Circle.svg?react';
+import VoiceIcon from "../../assets/images/icons/VoiceIcon";
+import PlusCircleIcon from '../../assets/images/icons/PlusCircleIcon';
 import  { getAll }  from '../../store/Users';
 import { AppDispatch } from '../../store';
 
@@ -17,12 +17,14 @@ function UsersPage(){
     const users = useSelector((state: RootState)=> state.users);
     const dispatch = useDispatch<AppDispatch>();
     useEffect(() => {
-        const promise = dispatch(getAll())
+        dispatch(getAll())
     }, []);
     useEffect(() => {
         console.log(users);
-    })
+    }, [users])
     
+    
+
     return(
         <>
             <TitleBlock 

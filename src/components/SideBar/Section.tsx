@@ -1,17 +1,21 @@
-import * as React from "react";
+import { ReactNode } from "react";
 
 export interface LayoutProps  { 
-    title: React.ReactNode,
-    children: string | JSX.Element | JSX.Element[],
+    title: ReactNode,
+    children: ReactNode,
 }
 
 function Section(props: LayoutProps){
+    const { 
+        title, 
+        children 
+    } = props;
     return(
         <div className="section">
             <div className="title">
-                {props.title}
+                {title}
             </div>
-            {props.children}
+            {children}
         </div>
     )
 }

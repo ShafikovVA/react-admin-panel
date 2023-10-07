@@ -1,24 +1,31 @@
+import { ReactNode } from 'react';
+import { Box } from '@mui/material';
+
 export interface LayoutProps{
-    title?: string | JSX.Element | JSX.Element[],
-    subtitle?: string | JSX.Element | JSX.Element[],
-    children?: string | JSX.Element | JSX.Element[],
+    title?: ReactNode,
+    subtitle?: ReactNode,
+    children?: ReactNode,
 }
 
 function PanelTitle(props: LayoutProps){
+    const { 
+        title, 
+        subtitle, 
+        children 
+    } = props;
+    
     return(
-        <div className="panelTitle">
-            {(props.title || props.children) &&
-                <div className="panelTitle-container">
-                    <div className="title">{props.title}</div>
-                    <div className="children">{props.children}</div>    
-                </div>
+        <Box className="panelTitle">
+            {(title || children) &&
+                <Box className="panelTitle-container">
+                    <Box className="title">{title}</Box>
+                    <Box className="children">{children}</Box>    
+                </Box>
             }
-            {props.subtitle && 
-                <div className="subtitle">{props.subtitle}</div>
+            {subtitle && 
+                <Box className="subtitle">{subtitle}</Box>
             }
-         
-      
-        </div>
+        </Box>
     )
 }
 export default PanelTitle

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import IUsers from '../Models/IUsers';
-import IUser from '../Models/IUser';
+import IUsers from '../models/IUsers';
 import axios from 'axios';
 import { API_HOST } from '../config';
 

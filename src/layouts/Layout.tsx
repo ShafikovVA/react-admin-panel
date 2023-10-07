@@ -1,17 +1,17 @@
 import React from 'react';
 import {RouterProvider, BrowserRouter, Outlet} from "react-router-dom";
-import HeaderLeftSide from './header/HeaderLeftSide.tsx';
-import HeaderTopSide from './header/HeaderTopSide.tsx';
+import SideBar from './Sidebar.tsx';
+import Header from './Header.tsx';
 
 
 function Layout(){
     return (
     <>  
         <header>
-            <HeaderTopSide></HeaderTopSide>
+            <Header />
         </header>
         <div className='main-container'>
-            <HeaderLeftSide></HeaderLeftSide>
+            <SideBar />
             <div className="content-container postition-relative d-flex ">
                 <main>
                     <Outlet />

@@ -2,11 +2,17 @@ import IInput from "./IInput";
 
 
 function InputLayout(props: IInput){
+    const { 
+        inline, 
+        children, 
+        description 
+    } = props;
+    
     return(
-        <div className={"form-input "+ (props.inline ? 'inline' : '')} >
-            {props.children}
-            {props.description && 
-                <div className="description">{props.description}</div>
+        <div className={"form-input "+ (inline ? 'inline' : '')} >
+            {children}
+            {description && 
+                <div className="description">{description}</div>
             }
         </div>
     )

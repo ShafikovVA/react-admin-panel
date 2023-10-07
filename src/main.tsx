@@ -4,7 +4,7 @@ import Layout from './pages/layouts/Layout.tsx';
 import './index.scss';
 import './assets/scss/adaptive.scss';
 import './assets/scss/components';
-import {RouterProvider} from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import router from './router.tsx';
 import { store } from './store.ts';
 import { Provider } from 'react-redux'

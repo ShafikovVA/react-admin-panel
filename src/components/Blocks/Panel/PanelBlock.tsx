@@ -1,20 +1,29 @@
+import { ReactNode } from 'react';
+import { Box } from '@mui/material';
+
 export interface LayoutProps{
-    children?: string | JSX.Element | JSX.Element[],
+    children?: ReactNode,
     title?: string,
     description?: string,
 }
 
 function PanelBlock(props : LayoutProps){
+    const { 
+        children, 
+        title, 
+        description 
+    } = props;
+
     return(
-        <div className="panel-block">
-            <div className="title-block">
-                <div className="div">
-                    <div className="title">{props.title}</div>
-                    <div className="description">{props.description}</div>
-                </div>
-            </div>
-            <div className="div">{props.children}</div>
-        </div>
+        <Box className="panel-block">
+            <Box className="title-block">
+                <Box>
+                    <Box className="title">{title}</Box>
+                    <Box className="description">{description}</Box>
+                </Box>
+            </Box>
+            <Box className="div">{children}</Box>
+        </Box>
     )
 }
 export default PanelBlock;

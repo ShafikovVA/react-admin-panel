@@ -1,24 +1,25 @@
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { Collapse } from '@mui/material';
-import IndicatorIcon from "../../assets/images/icons/Indicator.svg?react";
+import IndicatorIcon from "../../assets/images/icons/IndicatorIcon";
 
 export interface LayoutProps  {
     title: string;
-    icon?: string | JSX.Element | JSX.Element[],
-    children: JSX.Element[],
+    icon?: ReactNode,
+    children: ReactNode,
 }
 
 function DropDown(props: LayoutProps){
+    const { title, icon, children } = props;
     let [expanded, setExpanded] = useState(false);    
     return(
         <div className="dropdown-link" onClick={()=> setExpanded(!expanded)}>
             <div className="title">
-                {props.icon}
-                {props.title}
-                <IndicatorIcon className={'indicator ' + (expanded ? 'rotated': '') } ></IndicatorIcon>
+                {icon}
+                {title}
+                <IndicatorIcon className={'indicator ' + (expanded ? 'rotated': '') } />
             </div>
             <Collapse in={expanded}>
-                {props.children}
+                {children}
             </Collapse>
         </div>
     )

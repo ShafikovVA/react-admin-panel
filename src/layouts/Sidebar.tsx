@@ -1,54 +1,49 @@
-import Section from "../../../components/LeftSide/Section";
-import LinkButton from "../../../components/LeftSide/LinkButton";
-import DropDown from "../../../components/LeftSide/DropDown";
+import Section from "../components/SideBar/Section";
+import LinkButton from "../components/SideBar/LinkButton";
+import DropDown from "../components/SideBar/DropDown";
+import { Box } from "@mui/material";
 
-
-import UserIcon from "./../../../assets/images/icons/User.svg?react";
-import CategoryIcon from "./../../../assets/images/icons/Category.svg?react";
-import DocumentIcon from "./../../../assets/images/icons/Document.svg?react";
-import Bullet from "./../../../assets/images/icons/Bullet.svg?react";
-import FilterIcon from "./../../../assets/images/icons/Filter.svg";
-import GameIcon from "./../../../assets/images/icons/Game.svg";
-import SettingIcon from "./../../../assets/images/icons/Setting.svg";
+import UserIcon from "../assets/images/icons/UserIcon";
+import CategoryIcon from "../assets/images/icons/CategoryIcon";
+import DocumentIcon from "../assets/images/icons/DocumentIcon";
+import BulletIcon from "../assets/images/icons/BulletIcon";
 
 import { useLocation } from 'react-router-dom';
 
 
 function HeaderLeftSide(){
-    console.log(useLocation());
     return (
-        <div className="leftSideBar">
+        <Box className="leftSideBar">
             <Section title="Управление главной страницей">
                 <LinkButton className={ useLocation().pathname === '/'  ? 'active' : ''} url="/">
-                    <UserIcon></UserIcon> 
+                    <UserIcon /> 
                     Главная страница
                 </LinkButton>
                 <LinkButton className={ useLocation().pathname.startsWith('/EditDataPage')  ? 'active' : ''} url="/EditDataPage">
-                    <CategoryIcon></CategoryIcon>
+                    <CategoryIcon />
                     Не главная страница
                 </LinkButton>
                 <LinkButton className={ useLocation().pathname.startsWith('/users')  ? 'active' : ''} url="/users">
-                    <UserIcon></UserIcon> 
+                    <UserIcon />
                     Пользователи
                 </LinkButton>
                 <DropDown title="Дропдаун"
-                        icon={<DocumentIcon></DocumentIcon>}>
+                        icon={<DocumentIcon />}>
                         <LinkButton url="/">
-                            <Bullet></Bullet>
+                            <BulletIcon />
                             Первый
                         </LinkButton>
                         <LinkButton url="/">
-                            <Bullet></Bullet>
+                            <BulletIcon />
                             Второй
                         </LinkButton>
                         <LinkButton url="/">
-                            <Bullet></Bullet>
+                            <BulletIcon />
                             Третий
                         </LinkButton>
                 </DropDown>
-                   
             </Section>
-        </div>
+        </Box>
     )
 }
 export default HeaderLeftSide 

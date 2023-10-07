@@ -11,15 +11,13 @@ function HeaderLeftSide(){
                 </svg>
                 Admin
             </div>
-            
             <div className="navigation">
                 <div className="user">
                     <div className="UserPhoto">В</div>
-                    <div className="ingo">
-                        <div className="name">Владислав Шафиков</div>
-                        <div className="role">Администратор</div>
+                    <div className="info">
+                        <span className="name">Владислав Шафиков</span>
+                        <span className="role">Администратор</span>
                     </div>
-                   
                 </div>
             </div>
         </>

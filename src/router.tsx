@@ -1,10 +1,10 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import HomePage from './pages/Home/HomePage.tsx';
 import EditDataPage from './pages/EditDataPage.tsx';
 import UsersPage from './pages/User/UsersPage.tsx';
 import CreateUserPage from './pages/User/CreateUserPage.tsx';
-import Layout from "./pages/layouts/Layout.tsx";
+import Layout from "./layouts/Layout.tsx";
 
 const router = createBrowserRouter([
     {
